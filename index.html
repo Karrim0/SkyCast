@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="CSS/all.min.css" />
+    <link rel="stylesheet" href="CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="CSS/main.css" />
+</head>
+<body>
+    <div class="app-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Enter city name..." />
+            <button id="searchBtn">Find</button>
+        </div>
+        <div class="weather-today card">
+            <div class="weather-header">
+                <h2 id="cityName">City Name</h2>
+                <span id="dayName">Day</span>, <span id="date">Date</span>
+            </div>
+            <div class="weather-body">
+                <div class="weather-main">
+                    <span id="temperature" class="temperature">0<sup>°</sup>C</span>
+                    <img id="weatherIcon" src="" alt="weather icon" />
+                </div>
+                <p id="weatherText">Weather Description</p>
+                <div class="weather-extra">
+                    <span>Humidity: <span id="humidity"></span></span>
+                    <span>Wind: <span id="wind">--</span></span>
+                    <span>Direction: <span id="windDir"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="forecast-container">
+            <div class="forecast-card">
+                <div class="forecast-day" id="nextDayName">Next Day</div>
+                    <img id="nextDayIcon" src="" alt="icon" />
+                <div class="forecast-temp">
+                <span id="nextDayMax">--<sup>°</sup></span> /
+                <span id="nextDayMin">--<sup>°</sup></span>
+            </div>
+            <p id="nextDayText">Description</p>
+        </div>
+        <div class="forecast-card">
+            <div class="forecast-day" id="thirdDayName">Third Day</div>
+            <img id="thirdDayIcon" src="" alt="icon" />
+            <div class="forecast-temp">
+                <span id="thirdDayMax">--<sup>°</sup></span> /
+                <span id="thirdDayMin">--<sup>°</sup></span>
+            </div>
+            <p id="thirdDayText">Description</p>
+        </div>
+        </div>
+        <p class="text-center small mt-4 text-light">
+            © 2025 Weather App by <a href="https://www.linkedin.com/in/karim74/" target="_blank" class="text-decoration-none text-white fw-bold">Karim Mohamed</a>. Designed & Developed with care. All rights reserved
+        </p>
+    </div>
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/index.js"></script>
+</body>
+</html>
