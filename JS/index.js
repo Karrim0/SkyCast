@@ -84,6 +84,29 @@ function initializeWeatherApp() {
     }
     });
 }
+// detect user location
+function detectLocationAndSetCity() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
 
 
+        fetch(`https://api.weatherapi.com/v1/forecast.json?key=27e6a311a76c4172a8e20629241011&q=${lat},${lon}&days=3`)
+        .then(res => res.json())
+        .then(data => {
+            currentCity = data.location.name;
+            updateTodayWeather(data);
+            updateNextDays(data);
+        })
+        .catch(err => console.log("Error fetching weather by location:", err));
+        }, function() {
+        getWeather(currentCity);
+        });
+    } else {
+        getWeather(currentCity);
+    }
+}
+
+detectLocationAndSetCity();
 initializeWeatherApp();
